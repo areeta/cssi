@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<title>Flex</title>
+
+<style>
+
+  #outer {
+    background-color: lightgrey;
+    /* flex lets it only wraps around one + makes it horizontal */
+    display: flex;
+    flex-direction: row;
+
+    /* Tells it to arrange the items with respect to the horizontal */
+    justify-content: center;
+
+    /* Tells it to arrange the items with respect to vertical when flex-direction row */
+    align-items: center;
+    height: 100px;
+  }
+
+  #inner {
+    background-color: red;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  #green {
+    background-color: green;
+  }
+
+  #blue {
+    background-color: blue;
+  }
+
+</style>
+
+<div id="outer">
+  <div id="inner">Hello</div>
+  <div id="green">Green</div>
+  <div id="blue">Blue</div>
+</div>

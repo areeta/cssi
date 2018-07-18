@@ -1,0 +1,43 @@
+body {
+  background-color: gray;
+}
+
+div {
+  padding: 50px;
+}
+
+#title {
+  background: black;
+}
+
+/* important: display + flex-direction + grow/shrink index */
+
+#content {
+  background:red;
+  display: flex;
+  flex-direction: row;
+}
+
+#left {
+  background: darkgreen;
+  display: flex;
+  flex: 1 1 200px; /* first number is how fast to grow, second is how fast to shrink, base size to be */
+}
+
+#right {
+  background: lightgreen;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+}
+
+#info {
+  background: white;
+  border: 1px solid black;
+  border-radius: 2px;
+  box-shadow: 0 0 4px black;
+}
+
+img {
+  margin: 10px;
+}
