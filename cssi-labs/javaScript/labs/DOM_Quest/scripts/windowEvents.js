@@ -13,11 +13,25 @@
 // limitations under the License.
 
 console.log("Running Window Events Script");
-window.addEventListener("keypress", e=> {
-console.log(e.keyCode);
 
-
-})
-
+let purpleBox = document.querySelector("#box6");
 
 // insert a function that prints out the key code of a key pressed
+window.addEventListener("keypress", e=> {
+  if (e.keyCode == 99) {
+    purpleBox.style.borderRadius = "50%";
+    purpleBox.style.transform = "scale(0.5,0.5)";
+  } else if (e.keyCode == 115) {
+    purpleBox.style.borderRadius = "";
+    purpleBox.style.transform = "scale(1,1)";
+  }
+});
+
+let rectan = document.querySelector("#rect");
+
+//When you scroll down 50px, have the rectangle on your page turn black.
+window.addEventListener("scroll", e=> {
+  if (window.pageYOffset <= 50) {
+    rectan.style.backgroundColor = "black";
+  }
+})
