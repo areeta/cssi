@@ -25,21 +25,37 @@ print("Hello World")
 
 # The last parameter goes by whatever you want
 
-for i in range(5, 10, 2):
-    print(i)
+# for i in range(5, 10, 2):
+#     print(i)
+#
+# my_name = "Areeta"
+# friend1 = "Jess"
+# friend2 = "Julia"
+# friend3 = "Ciera"
+# friend4 = "Matthew"
+#
+# print("My name is " + my_name + " and my friends are " + friend1 + ", " + friend2 + ", " + friend3 + ", and " + friend4)
+#
+# print(
+#     "My name is %s and my friends are %s, %s, %s, and %s." %
+#     (my_name, friend1, friend2, friend3, friend4)
+# )
+#
+# google_age = 1.7
+# print("My Google-age is %s" % google_age)
 
-my_name = "Areeta"
-friend1 = "Jess"
-friend2 = "Julia"
-friend3 = "Ciera"
-friend4 = "Matthew"
+def greetSecretAgent(first_name, last_name):
+    print("%s. %s, %s" % (last_name, first_name , last_name))
 
-print("My name is " + my_name + " and my friends are " + friend1 + ", " + friend2 + ", " + friend3 + ", and " + friend4)
+greetSecretAgent("Areeta", "Wong")
 
-print(
-    "My name is %s and my friends are %s, %s, %s, and %s." %
-    (my_name, friend1, friend2, friend3, friend4)
-)
+if greetSecretAgent("a", "b") is None:
+    print("????")
 
-google_age = 1.7
-print("My Google-age is %s" % google_age)
+def secretAgentGreeting(first_name, last_name):
+    return "%s. %s, %s" % (last_name, first_name , last_name)
+
+print(secretAgentGreeting("Areeta", "Wong"))
+
+greeting = secretAgentGreeting("Areeta", "Wong")
+print(greeting)
