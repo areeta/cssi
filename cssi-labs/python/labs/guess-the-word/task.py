@@ -23,6 +23,7 @@ def make_word_as_array():
 # Makes the user guess into a list
 guess_list = list("_" * length_of_word)
 guesses = []
+mistakes = 0
 
 # Print functions for the original view, word guess, guesses of user
 def print_view():
@@ -37,16 +38,22 @@ def check_if_in_word():
     index_of_letter = comp_word.find(user_guess)
     if(index_of_letter > -1):   #if the letter of the user guess is in the word, then print it
         guess_list[index_of_letter] = user_guess
+    else:
+        mistakes += 1
 
 comp_word_as_list = make_word_as_array()
 
 while comp_word_as_list != guess_list:
-    print_view()
-    print "Previous guesses: ",
-    print_guesses()
-    print
-    user_guess = input("Guesses: ")
-    guesses.append(user_guess)
-    check_if_in_word()
+    if mistakes >= 5:
+        print "Too many mistakes."
+        break
+    else:
+        print_view()
+        print "Previous guesses: ",
+        print_guesses()
+        print
+        user_guess = input("Guesses: ")
+        guesses.append(user_guess)
+        check_if_in_word()
 
 print "The word was: " + comp_word

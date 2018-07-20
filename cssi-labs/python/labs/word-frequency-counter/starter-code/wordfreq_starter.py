@@ -40,3 +40,19 @@ content = read_process_data()
 
 # Write your solution below!
 
+word_dictionary = {}
+words_array = content.split(" ")
+stop_words = get_stop_words()
+
+for word in words_array:
+    # update the dictionary
+    # where each key is the word and the value is the count
+    # Test for the presence of a key in a dictionary, using the in keyword
+    if (word != "" and (not word in stop_words)):
+        if word in word_dictionary:
+            word_dictionary[word] += 1
+        else:
+            word_dictionary[word] = 1
+
+print word_dictionary
+# print get_highest_words(word_dictionary, 15)
