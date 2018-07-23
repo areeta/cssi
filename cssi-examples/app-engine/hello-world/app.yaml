@@ -3,5 +3,5 @@ api_version: 1
 threadsafe: true
 
 handlers:
-  - url: /.*
+  - url: /.* #anything I pass in goes to main.app
     script: main.app
