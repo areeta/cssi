@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css"/>
+  <script>
+    var x;
+    function changeColors() {
+      x = true;
+      setInterval(change, 1000);
+    }
+
+    function change() {
+      x = !x;
+      document.body.style.background = x ? "red":"purple";
+    }
+
+    window.onload=changeColors;
+
+  </script>
+
+<h1>Hello World!</h1>
+<i>Hello, World! We have learned about:</i>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Javascript</li>
+      <li>Python</li>
+      <li>Command Line</li>
+      <li>GitHub</li>
+      <li>AppEngine</li>
+  </ul>
+<a href='/bye'>Goodbye</a>

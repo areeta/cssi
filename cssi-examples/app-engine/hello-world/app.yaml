@@ -1,7 +1,0 @@
-runtime: python27
-api_version: 1
-threadsafe: true
-
-handlers:
-  - url: /.* #anything I pass in goes to main.app
-    script: main.app
