@@ -14,16 +14,18 @@ env = jinja2.Environment(
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
+        name = self.request.get("name")
+        location = self.request.get("location")
         template = env.get_template("templates/hello.html")
-        self.response.write(template.render())
+        templateVars = {
+            "name": name,
+            "location": location,
+        }
+        self.response.write(template.render(templateVars))
 
 class SecretEntrance(webapp2.RequestHandler):
     def get(self):
         self.response.write("Shhh, this is a secret!")
-
-class GoodBye(webapp2.RequestHandler):
-    def get(self):
-        self.response.write("Bye Bye!")
 
 class Home(webapp2.RequestHandler):
     def get(self):
@@ -45,13 +47,21 @@ class Links(webapp2.RequestHandler):
         template = env.get_template("templates/links.html")
         self.response.write(template.render())
 
+class Students(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/students.html")
+        templateVars = {
+            "location": "MTV",
+            "students": ["Kidus", "Leo", "Phoebe", "Jenny", "Lily", "Elvin"]
+        }
+        self.response.write(template.render(templateVars))
 
 app = webapp2.WSGIApplication([
     ("/", MainPage),
     ("/secret", SecretEntrance),
-    ("/bye", GoodBye),
     ("/home", Home),
     ("/activities", Activities),
+    ("/students", Students),
     ("/images", Images),
     ("/links", Links),
 ], debug=True)

@@ -1,0 +1,6 @@
+List an email
+<ul>
+  {% for email in emails %}
+    <li><a href="/emails?subject={{email.subject}}&sender={{email.sender}}&content={{email.content}}">({{email.sender}}) Subject: {{email.subject}}</liv>
+  {% endfor %}
+</ul>
