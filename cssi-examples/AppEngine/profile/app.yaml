@@ -7,8 +7,6 @@ handlers:
     static_dir: stylesheets
   - url: /images
     static_dir: images
-  - url: /templates
-    static_dir: templates
   - url: /.*        # anything I pass in goes to main.app --> a catch all
     script: main.app
 
