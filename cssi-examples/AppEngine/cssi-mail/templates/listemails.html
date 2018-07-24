@@ -1,6 +1,6 @@
-List an email
+<h2>Current Emails: </h2>
 <ul>
   {% for email in emails %}
-    <li><a href="/emails?subject={{email.subject}}&sender={{email.sender}}&content={{email.content}}">({{email.sender}}) Subject: {{email.subject}}</liv>
+    <li><a href="/emails?subject={{email.subject}}&sender={{email.sender}}&content={{email.content}}&image={{email.image}}">From: ({{email.sender}}) Subject: {{email.subject}}</liv>
   {% endfor %}
 </ul>

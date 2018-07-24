@@ -10,16 +10,19 @@ env = jinja2.Environment(
 )
 
 class Email(object):
-    def __init__(self, subject, sender, content):
+    def __init__(self, subject, sender, content, image):
         self.subject = subject
         self.sender = sender
         self.content = content
+        self.image = image
 
 emails = {
-    Email("Test", "ciera@google.com", "This is a test email"),
-    Email("Test2", "ciera@google.com", "This is the second email"),
-    Email("Other Test", "ciera@google.com", "Final test email"),
+    Email("Cats are cute", "ciera@google.com", "Meow Meow", "https://i2-prod.mirror.co.uk/incoming/article11238103.ece/ALTERNATES/s1200/PAY-KITTENS-CUDDLING.jpg"),
+    Email("I love cats", "ciera@google.com", "cattos lattos battos", "http://cdn.earthporm.com/wp-content/uploads/2015/07/sleeping-kitties-1__6051.jpg"),
+    Email("Cute cats for sale", "ciera@google.com", "Meoooowowowowowowowowowowwwowo", "https://www.petmd.com/sites/default/files/petmd-kitten-facts.jpg"),
 }
+
+
 # make it a link to ur email with slash email page -> make a link here + modify main.py and don't sha
 #the handler section
 class ListEmails(webapp2.RequestHandler):
@@ -36,11 +39,13 @@ class ViewEmails(webapp2.RequestHandler):
         subject = self.request.get("subject")
         sender = self.request.get("sender")
         content = self.request.get("content")
+        image = self.request.get("image")
         template = env.get_template("templates/viewemails.html")
         templateVars = {
             "subject": subject,
             "sender": sender,
             "content": content,
+            "image": image,
         }
         self.response.write(template.render(templateVars))
 
