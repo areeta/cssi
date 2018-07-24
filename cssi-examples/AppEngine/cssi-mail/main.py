@@ -32,7 +32,7 @@ class ListEmails(webapp2.RequestHandler):
 
 class ViewEmails(webapp2.RequestHandler):
     def get(self): #for a GET request
-        # Creating variables to change the values of templateVars through URL finessing 
+        # Creating variables to change the values of templateVars through URL finessing
         subject = self.request.get("subject")
         sender = self.request.get("sender")
         content = self.request.get("content")
