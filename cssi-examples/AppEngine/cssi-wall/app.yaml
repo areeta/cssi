@@ -2,6 +2,7 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+# Get requests goes to to figure out where to go next => with all URLs, go to main.app
 handlers:
   - url: /templates
     script: templates
