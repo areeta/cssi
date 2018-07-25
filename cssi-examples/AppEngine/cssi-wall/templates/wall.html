@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<title>CSSI Wall</title>
+<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
+
+<style>
+  body {
+    margin: 50px;
+    font-family: 'Cinzel', serif;
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+    border: 5px solid lightblue;
+    background-color: lightgray;
+    margin: 20px;
+    font-family: 'Quattrocento Sans', sans-serif;
+  }
+
+  h4 {
+    margin: 0px;
+  }
+</style>
+
+<h1>CSSI Wall!</h1>
+
+<div class="message">
+  <form action="/" method="post">
+    <label>Content: </label> <br>
+      <textarea name="content" rows="5" cols="100">Type your message!</textarea>
+    <br> <br> <br>
+    <label>Name: </label>
+      <input name="name"><br><br>
+    <button>Post your message!</button>
+  </form>
+</div>
+
+
+{% for message in messages %}
+  <div class="message">
+    <h4>Posted by {{message.name}}: </h4> <br>
+    {{message.content}} <br>
+    <i>Posted at {{message.created_time}}</i>
+  </div>
+{% endfor %}
