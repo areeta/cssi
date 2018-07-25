@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<title>Clicky</title>
+
+<!-- get method puts all of the data in the url => good for bookmarks
+the action brings it to the same page -->
+
+<style>
+  body {
+    background-color: #ccc;
+  }
+
+  form {
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 2px;
+    margin: 50px;
+    padding: 50px;
+  }
+</style>
+
+<form action="/" method="post">
+  <button>Click Me</button>
+</form>
+
+<p>{{click_count}} people have clicked the button.</p>
